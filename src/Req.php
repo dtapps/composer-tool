@@ -38,7 +38,7 @@ class Req
     public static function isEmptyRet(array $data = [], array $arr = [])
     {
         foreach ($arr as $k => $v) {
-            if (empty(isset($data["$v"]) ? $data["$v"] : '')) Ret::json_error('请检查参数', 102);
+            if (empty(isset($data["$v"]) ? $data["$v"] : '')) Ret::jsonError('请检查参数', 102);
         }
         return $data;
     }
