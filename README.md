@@ -23,9 +23,27 @@ composer search liguangchun/tool
 
 ## 使用
 
+### 小程序加密解密交互数据
+```
+use liguangchun\tool\MiniProgramAes;
+
+class Index
+{
+    public function index()
+    {
+        // 配置key和iv
+        $aes = new MiniProgramAes('7324564123567898', '7324564173265898');
+        // 加密 自动识别是array还是字符串
+        var_dump($aes->encrypt('1111'));
+        // 解密
+        var_dump($aes->decrypt('J42UtufU8075QPbq0%2FQIqA%3D%3D'));
+    }
+}
+```
+
 ### 返回Json
 ```
-use liguangchun\notice\Ret;
+use liguangchun\tool\Ret;
 
 class Index
 {
@@ -42,7 +60,7 @@ class Index
 
 ### 判断请求
 ```
-use liguangchun\notice\Req;
+use liguangchun\tool\Req;
 
 class Index
 {
