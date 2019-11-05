@@ -33,7 +33,7 @@ class Req
      * 判断输入的参数为空就返回Json错误
      * @param array $data
      * @param array $arr
-     * @return array 有空值就返回Json错误
+     * @return array 有空值就输出Json错误
      */
     public static function isEmptyRet(array $data = [], array $arr = [])
     {
