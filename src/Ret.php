@@ -14,7 +14,7 @@ class Ret
      * @param string $msg
      * @param int $code
      */
-    public static function json_success(array $data = [], string $msg = 'success', int $code = 0)
+    public function json_success(array $data = [], string $msg = 'success', int $code = 0)
     {
         header('Content-Type:application/json; charset=utf-8');
         exit(json_encode(['code' => $code, 'msg' => $msg, 'data' => $data]));
@@ -25,7 +25,7 @@ class Ret
      * @param string $msg
      * @param int $code
      */
-    public static function json_error(string $msg = 'error', int $code = 1)
+    public function json_error(string $msg = 'error', int $code = 1)
     {
         header('Content-Type:application/json; charset=utf-8');
         exit(json_encode(['code' => $code, 'msg' => $msg]));
@@ -36,12 +36,12 @@ class Ret
      * @param int $code
      * @param string $msg
      */
-    public static function json_error_code(int $code = 1, string $msg = 'error')
+    public function json_error_code(int $code = 1, string $msg = '')
     {
         header('Content-Type:application/json; charset=utf-8');
-        $data[1] = ['msg' => $msg];
-        $data[102] = ['msg' => '参数不足'];
-        $data[601] = ['msg' => '数据不存在'];
+        $data[1] = ['msg' => empty($msg) ? $msg : 'error'];
+        $data[102] = ['msg' => empty($msg) ? $msg : '参数不足'];
+        $data[601] = ['msg' => empty($msg) ? $msg : '数据不存在'];
         array_push($data, ['code' => $code]);
         exit(json_encode($data));
     }
