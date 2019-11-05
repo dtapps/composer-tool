@@ -8,6 +8,11 @@
 
 namespace liguangchun\tool;
 
+/**
+ * 返回
+ * Class Ret
+ * @package liguangchun\tool
+ */
 class Ret
 {
     /**
@@ -41,10 +46,15 @@ class Ret
     public static function json_error_code(int $code = 1, string $msg = '')
     {
         header('Content-Type:application/json; charset=utf-8');
-        $data[1] = ['msg' => empty($msg) ? $msg : 'error'];
-        $data[102] = ['msg' => empty($msg) ? $msg : '参数不足'];
-        $data[601] = ['msg' => empty($msg) ? $msg : '数据不存在'];
-        array_push($data, ['code' => $code]);
-        exit(json_encode($data));
+        try {
+            $data[1] = ['msg' => empty($msg) ? 'error' : $msg];
+            $data[102] = ['msg' => empty($msg) ? '参数不足' : $msg];
+            $data[601] = ['msg' => empty($msg) ? $msg : '数据不存在'];
+            array_push($data, ['code' => $code]);
+            exit(json_encode($data[$code]));
+        } catch (\Exception $e) {
+            $data = ['code' => -1, 'msg' => '未定义错误状态'];
+            exit(json_encode($data));
+        }
     }
 }
