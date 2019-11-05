@@ -1,0 +1,22 @@
+{
+  "name": "liguangchun/tool",
+  "description": "Tool Plugin for PHP",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "李光春",
+        "email": "gc@dtapp.net",
+        "homepage": "https://api.dtapp.net"
+    }
+  ],
+    "homepage": "https://www.dtapp.net",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "liguangchun\\tool\\": "src"
+        }
+    }
+}
