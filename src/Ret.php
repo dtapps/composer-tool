@@ -16,7 +16,7 @@ class Ret
      * @param string $msg
      * @param int $code
      */
-    public function json_success(array $data = [], string $msg = 'success', int $code = 0)
+    public static function json_success(array $data = [], string $msg = 'success', int $code = 0)
     {
         header('Content-Type:application/json; charset=utf-8');
         exit(json_encode(['code' => $code, 'msg' => $msg, 'data' => $data]));
@@ -27,7 +27,7 @@ class Ret
      * @param string $msg
      * @param int $code
      */
-    public function json_error(string $msg = 'error', int $code = 1)
+    public static function json_error(string $msg = 'error', int $code = 1)
     {
         header('Content-Type:application/json; charset=utf-8');
         exit(json_encode(['code' => $code, 'msg' => $msg]));
@@ -38,7 +38,7 @@ class Ret
      * @param int $code
      * @param string $msg
      */
-    public function json_error_code(int $code = 1, string $msg = '')
+    public static function json_error_code(int $code = 1, string $msg = '')
     {
         header('Content-Type:application/json; charset=utf-8');
         $data[1] = ['msg' => empty($msg) ? $msg : 'error'];
