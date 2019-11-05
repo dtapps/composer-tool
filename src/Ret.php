@@ -17,9 +17,9 @@ class Ret
 {
     /**
      * 返回Json-成功
-     * @param array $data
-     * @param string $msg
-     * @param int $code
+     * @param array $data 数据
+     * @param string $msg 描述
+     * @param int $code 状态am
      */
     public static function json_success(array $data = [], string $msg = 'success', int $code = 0)
     {
@@ -29,8 +29,8 @@ class Ret
 
     /**
      * 返回Json-错误
-     * @param string $msg
-     * @param int $code
+     * @param string $msg 描述
+     * @param int $code 状态码
      */
     public static function json_error(string $msg = 'error', int $code = 1)
     {
