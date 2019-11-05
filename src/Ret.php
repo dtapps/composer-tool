@@ -37,24 +37,4 @@ class Ret
         header('Content-Type:application/json; charset=utf-8');
         exit(json_encode(['code' => $code, 'msg' => $msg]));
     }
-
-    /**
-     * 返回Json-错误
-     * @param int $code
-     * @param string $msg
-     */
-    public static function json_error_code(int $code = 1, string $msg = '')
-    {
-        header('Content-Type:application/json; charset=utf-8');
-        try {
-            $data[1] = ['msg' => empty($msg) ? 'error' : $msg];
-            $data[102] = ['msg' => empty($msg) ? '参数不足' : $msg];
-            $data[601] = ['msg' => empty($msg) ? $msg : '数据不存在'];
-            array_push($data, ['code' => $code]);
-            exit(json_encode($data[$code]));
-        } catch (\Exception $e) {
-            $data = ['code' => -1, 'msg' => '未定义错误状态'];
-            exit(json_encode($data));
-        }
-    }
 }
