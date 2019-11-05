@@ -6,6 +6,8 @@
  * User: 李光春 gc@dtapp.net
  */
 
+namespace liguangchun\tool;
+
 class Ret
 {
     /**
