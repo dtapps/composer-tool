@@ -6,7 +6,7 @@
  * User: 李光春 gc@dtapp.net
  */
 
-namespace liguangchun\WeMini;
+namespace DtApp\WeChatMini;
 
 
 class Auth extends Config

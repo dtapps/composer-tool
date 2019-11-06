@@ -6,11 +6,10 @@
  * User: 李光春 gc@dtapp.net
  */
 
-namespace liguangchun\WeMini;
+namespace DtApp\WeChatMini;
 
 class User extends Config
 {
-
     /**
      * 错误状态码
      * @var string
