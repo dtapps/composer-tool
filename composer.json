@@ -20,7 +20,7 @@
   "autoload": {
     "psr-4": {
       "liguangchun\\tool\\": "src",
-      "liguangchun\\WeMini\\": "WeMini"
+      "DtApp\\WeMini\\": "src/WeMini"
     }
   }
 }
