@@ -14,4 +14,4 @@ $aes = new \liguangchun\tool\MiniProgramAes('7324564123765898', '732456412376589
 // 加密 自动识别是array还是字符串
 var_dump($aes->encrypt('1111'));
 // 解密
-var_dump($aes->decrypt('J42UtufU8075QPbq0%2FQIqA%3D%3D'));
+var_dump($aes->decrypt("%2BjQDToT%2FBYkHVZRcI4QHFQ%3D%3D"));

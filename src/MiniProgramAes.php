@@ -41,10 +41,10 @@ class MiniProgramAes
 
     /**
      * 解密
-     * @param string $data 数据
+     * @param $data 数据
      * @return string
      */
-    public function decrypt(string $data)
+    public function decrypt($data)
     {
         try {
             return openssl_decrypt(base64_decode(urldecode($data)), "AES-128-CBC", $this->key, true, $this->iv);
